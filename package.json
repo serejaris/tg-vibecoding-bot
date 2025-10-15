@@ -1,0 +1,23 @@
+{
+  "name": "tg-echo-bot",
+  "version": "1.0.0",
+  "description": "Minimal Telegram echo bot using Telegraf (Node.js, CommonJS)",
+  "main": "src/index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
+
