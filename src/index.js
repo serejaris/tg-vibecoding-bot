@@ -5,7 +5,11 @@ const { Telegraf } = require('telegraf');
 
 const handleStart = require('./handlers/start');
 const handleHelp = require('./handlers/help');
-const handleEcho = require('./handlers/echo');
+const handleVibe = require('./handlers/vibe');
+const handleVibeWorkflow = require('./handlers/vibe_workflow');
+const handleVibeStart = require('./handlers/vibe_start');
+const handleVibePractices = require('./handlers/vibe_practices');
+const handleVibeProsCons = require('./handlers/vibe_pros_cons');
 
 const token = process.env.BOT_TOKEN;
 
@@ -27,9 +31,11 @@ async function launch() {
   // Register command handlers
   bot.start(handleStart);
   bot.help(handleHelp);
-
-  // Echo only text updates; ignore other message types to avoid noise
-  bot.on('text', handleEcho);
+  bot.command('vibe', handleVibe);
+  bot.command('vibe_workflow', handleVibeWorkflow);
+  bot.command('vibe_start', handleVibeStart);
+  bot.command('vibe_practices', handleVibePractices);
+  bot.command('vibe_pros_cons', handleVibeProsCons);
 
   await bot.launch();
   console.log('[INFO] Bot launched with long polling');
